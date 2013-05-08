@@ -1,0 +1,12 @@
+<div id="reg_form" class="bg_form">
+	<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @evaluation_type.name %>
+</p>
+
+
+<%= link_to 'Editar', edit_evaluation_type_path(@evaluation_type), class: "btn btn-primary btn_form" %> |
+<%= link_to 'Atras', evaluation_types_path, class: "btn btn-primary btn_form" %>
+</div>
