@@ -1,0 +1,18 @@
+<div id="reg_form" class="bg_form">
+	<p id="notice"><%= notice %></p>
+
+	<p>
+	  <b>Nombre:</b>
+	  <%= @user_type.name %>
+	</p>
+
+	<p>
+	  <b>Descripcion:</b>
+	  <%= @user_type.description %>
+	</p>
+
+	<hr>
+
+	<%= link_to 'Editar', edit_user_type_path(@user_type) %> |
+	<%= link_to 'Atras', user_types_path %>
+</div>

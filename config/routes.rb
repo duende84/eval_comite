@@ -1,6 +1,7 @@
 EvalComite::Application.routes.draw do
 
   resources :user_states
+  resources :user_types
 
 
   # The priority is based upon order of creation:
