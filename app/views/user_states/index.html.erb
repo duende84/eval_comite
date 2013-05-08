@@ -1,0 +1,21 @@
+<div id="reg_form" class="bg_form">
+ <h1>Estados de usuario</h1>
+  <table>
+    <tr>
+      <th>Nombre</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  <% @user_states.each do |user_state| %>
+    <tr>
+      <td><%= user_state.name %></td>
+      <td><%= link_to 'Mostrar', user_state %></td>
+      <td><%= link_to 'Editar', edit_user_state_path(user_state) %></td>
+      <td><%= link_to 'Eliminar', user_state, method: :delete, data: { confirm: '¿Estas seguro?' } %></td>
+    </tr>
+  <% end %>
+  </table>
+<hr>
+<%= link_to 'Ingresar Nuevo', new_user_state_path, class: "btn btn-primary btn_form" %>
+</div>

@@ -1,5 +1,8 @@
 EvalComite::Application.routes.draw do
 
+  resources :user_states
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
