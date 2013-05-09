@@ -1,0 +1,13 @@
+<div id="reg_form" class="bg_form">
+ <h1>Estados de usuario</h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @user_state.name %>
+</p>
+<hr>
+
+<%= link_to 'Editar', edit_user_state_path(@user_state) %> |
+<%= link_to 'Atras', user_states_path %>
+</div>

@@ -1,6 +1,11 @@
 EvalComite::Application.routes.draw do
 
+<<<<<<< HEAD
   resources :evaluation_types
+=======
+  resources :user_states
+  resources :user_types
+>>>>>>> 4d0f61c8c7d40ab8a3ab7b16645434deba5b06fc
 
 
   # The priority is based upon order of creation:
