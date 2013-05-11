@@ -60,7 +60,7 @@ class UserStatesController < ApplicationController
 
     respond_to do |format|
       if @user_state.update_attributes(params[:user_state])
-        format.html { redirect_to @user_state, notice: 'Estado de usuario actualizado correctamente.' }
+        format.html { redirect_to @user_state, notice: 'Estado de usuario actualizado con exito.' }
         format.json { head :no_content }
       else
         format.html { render action: "editar" }

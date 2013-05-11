@@ -44,7 +44,7 @@ class UserTypesController < ApplicationController
 
     respond_to do |format|
       if @user_type.save
-        format.html { redirect_to @user_type, notice: 'User type was successfully created.' }
+        format.html { redirect_to @user_type, notice: 'Tipo de usuario creado con exito.' }
         format.json { render json: @user_type, status: :created, location: @user_type }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class UserTypesController < ApplicationController
 
     respond_to do |format|
       if @user_type.update_attributes(params[:user_type])
-        format.html { redirect_to @user_type, notice: 'User type was successfully updated.' }
+        format.html { redirect_to @user_type, notice: 'Tipo de usuario actualizado con exito.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
