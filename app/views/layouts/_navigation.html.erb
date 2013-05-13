@@ -8,5 +8,24 @@
   <ul class="nav pull-right">
     <li><%= link_to "Inicio", root_path, :class => 'home_link' %></li>
     <li><%= link_to "Contacto", root_path, :class => 'home_link' %></li>
+
+  	<li class="dropdown" id="accountmenu">
+	    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+	      <%= image_tag("user.png", :alt => "Usuarios") %>
+	      <% if signed_in? %>
+	          <span><%= current_user.name %></span>
+	      <% end %>
+	    </a>
+	    <ul class="dropdown-menu">
+	      <% if signed_in? %>
+	        <li><%= link_to "Mi perfil: "+current_user.name, current_user %></li>
+	        <li class="divider"></li>
+	        <li><%= link_to "Salir", signout_path, method: "delete" %></li>
+	      <% else %>
+	        <li><%= link_to "Ingresar", signin_path %></li>
+	        <li><%= link_to "Registrate", signup_path %></li>
+	      <% end %>
+	    </ul>
+    </li>
   </ul>
 </div>
