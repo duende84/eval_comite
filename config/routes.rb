@@ -1,5 +1,12 @@
 EvalComite::Application.routes.draw do
 
+  resources :users do
+    member do
+      get 'password'
+      put 'update_password'
+    end
+  end
+
   resources :evaluation_types
   resources :user_states
   resources :user_types
