@@ -1,10 +1,11 @@
-<p id="notice"><%= notice %></p>
 
+<div id="reg_form" class="bg_form">
+<p id="notice"><%= notice %></p>
 <p>
   <b>Name:</b>
   <%= @formulary.name %>
 </p>
-
-
-<%= link_to 'Edit', edit_formulary_path(@formulary) %> |
-<%= link_to 'Back', formularies_path %>
+<hr>
+<%= link_to 'Editar', edit_formulary_path(@formulary) %> |
+<%= link_to 'Atras', formularies_path %>
+</div>
