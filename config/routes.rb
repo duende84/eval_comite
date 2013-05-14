@@ -1,5 +1,8 @@
 EvalComite::Application.routes.draw do
 
+  resources :component_types
+
+
   resources :users do
     member do
       get 'password'

@@ -1,0 +1,17 @@
+<div id="reg_form" class="bg_form">
+<p id="notice"><%= notice %></p>
+<h1>Tipo de Componente</h1>
+<p>
+  <b>Nombre:</b>
+  <%= @component_type.name %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @component_type.description %>
+</p>
+
+
+<%= link_to 'Editar', edit_component_type_path(@component_type) %> |
+<%= link_to 'atras', component_types_path %>
+</div>
