@@ -1,0 +1,23 @@
+<h1>Listing formularies</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @formularies.each do |formulary| %>
+  <tr>
+    <td><%= formulary.name %></td>
+    <td><%= link_to 'Show', formulary %></td>
+    <td><%= link_to 'Edit', edit_formulary_path(formulary) %></td>
+    <td><%= link_to 'Destroy', formulary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Formulary', new_formulary_path %>
