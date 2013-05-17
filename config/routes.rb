@@ -1,5 +1,8 @@
 EvalComite::Application.routes.draw do
 
+  resources :formularies
+
+
   resources :component_types
 
 

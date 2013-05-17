@@ -1,0 +1,21 @@
+<div id="reg_form" class="bg_form">
+<h1>Formularios</h1>
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @formularies.each do |formulary| %>
+  <tr>
+    <td><%= formulary.name %></td>
+    <td><%= link_to 'Mostrar', formulary %></td>
+    <td><%= link_to 'Editar', edit_formulary_path(formulary) %></td>
+    <td><%= link_to 'Eliminar', formulary, method: :delete, data: { confirm: '¿Estas Seguro?' } %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+<%= link_to 'Nuevo Formulario', new_formulary_path, class: "btn btn-primary btn_form" %>
+</div>

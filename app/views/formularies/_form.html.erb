@@ -1,0 +1,21 @@
+<%= form_for(@formulary) do |f| %>
+  <% if @formulary.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@formulary.errors.count, "error") %> prohibited this formulary from being saved:</h2>
+
+      <ul>
+      <% @formulary.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name,"Nombre",:class => "label_form"%><br />
+    <%= f.text_field :name,:class => "text_field_form" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Guardar", class: "btn btn-primary btn_form" %>
+  </div>
+<% end %>
