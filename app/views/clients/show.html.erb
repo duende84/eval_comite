@@ -1,0 +1,60 @@
+<div id="reg_form" class="bg_form">
+  <h1>Cliente</h1>
+  <p>
+    <b>Nombre:</b>
+    <%= @client.name %>
+  </p>
+
+  <p>
+    <b>Direccion:</b>
+    <%= @client.address %>
+  </p>
+
+  <p>
+    <b>Email:</b>
+    <%= @client.email %>
+  </p>
+
+  <p>
+    <b>Web:</b>
+    <%= @client.web %>
+  </p>
+
+  <p>
+    <b>Telefono:</b>
+    <%= @client.phone %>
+  </p>
+
+  <p>
+    <b>Mision:</b>
+    <%= @client.mission %>
+  </p>
+
+  <p>
+    <b>Vision:</b>
+    <%= @client.vision %>
+  </p>
+
+  <p>
+    <b>Descripcion:</b>
+    <%= @client.description %>
+  </p>
+
+  <p>
+    <b>Objetivos:</b>
+    <%= @client.objectives %>
+  </p>
+
+  <p>
+    <b>Imagen:</b>
+    <%= @client.image %>
+  </p>
+
+  <p>
+    <b>Responsable:</b>
+    <%= @client.responsible_id %>
+  </p>
+  <hr>
+  <%= link_to 'Editar', edit_client_path(@client) %> |
+  <%= link_to 'Regresar', clients_path %>
+</div>

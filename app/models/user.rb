@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   attr_accessor :skip_password_validation
 
   belongs_to :user_type
+  has_many :clients
 
   has_secure_password
 

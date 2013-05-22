@@ -1,0 +1,42 @@
+<div id="reg_form" class="bg_form">
+<h1>Listado de Clientes</h1>
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Direccion</th>
+    <th>Email</th>
+    <th>Web</th>
+    <th>Telefono</th>
+    <th>Mision</th>
+    <th>Vision</th>
+    <th>Descripcion</th>
+    <th>Objetivos</th>
+    <th>Imagen</th>
+    <th>Responsable</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @clients.each do |client| %>
+  <tr>
+    <td><%= client.name %></td>
+    <td><%= client.address %></td>
+    <td><%= client.email %></td>
+    <td><%= client.web %></td>
+    <td><%= client.phone %></td>
+    <td><%= client.mission %></td>
+    <td><%= client.vision %></td>
+    <td><%= client.description %></td>
+    <td><%= client.objectives %></td>
+    <td><%= client.image %></td>
+    <td><%= client.responsible_id %></td>
+    <td><%= link_to 'Mostrar', client %></td>
+    <td><%= link_to 'Editar', edit_client_path(client) %></td>
+    <td><%= link_to 'Eliminar', client, method: :delete, data: { confirm: '¿Esta seguro?' } %></td>
+  </tr>
+<% end %>
+</table>
+<hr>
+<%= link_to 'Nuevo Cliente', new_client_path, class: "btn btn-primary btn_form" %>
+</div>

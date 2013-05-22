@@ -14,6 +14,7 @@ EvalComite::Application.routes.draw do
   resources :user_types
   resources :formularies
   resources :component_types
+  resources :clients
 
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
