@@ -44,7 +44,7 @@ class FormulariesController < ApplicationController
 
     respond_to do |format|
       if @formulary.save
-        format.html { redirect_to @formulary, notice: 'Formulary was successfully created.' }
+        format.html { redirect_to @formulary, notice: 'Formulario creado exitosamente.' }
         format.json { render json: @formulary, status: :created, location: @formulary }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class FormulariesController < ApplicationController
 
     respond_to do |format|
       if @formulary.update_attributes(params[:formulary])
-        format.html { redirect_to @formulary, notice: 'Formulary was successfully updated.' }
+        format.html { redirect_to @formulary, notice: 'Formulario actualizado exitosamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

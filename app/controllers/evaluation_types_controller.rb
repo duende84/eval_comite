@@ -44,7 +44,7 @@ class EvaluationTypesController < ApplicationController
 
     respond_to do |format|
       if @evaluation_type.save
-        format.html { redirect_to @evaluation_type, notice: 'Tipo de evaluacion creado con exito.' }
+        format.html { redirect_to @evaluation_type, notice: 'Tipo de evaluacion creado exitosamente.' }
         format.json { render json: @evaluation_type, status: :created, location: @evaluation_type }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class EvaluationTypesController < ApplicationController
 
     respond_to do |format|
       if @evaluation_type.update_attributes(params[:evaluation_type])
-        format.html { redirect_to @evaluation_type, notice: 'Tipo de evaluacion actualizado con exito.' }
+        format.html { redirect_to @evaluation_type, notice: 'Tipo de evaluacion actualizado exitosamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

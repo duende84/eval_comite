@@ -44,7 +44,7 @@ class ComponentTypesController < ApplicationController
 
     respond_to do |format|
       if @component_type.save
-        format.html { redirect_to @component_type, notice: 'Tipo de componente creado con exito.' }
+        format.html { redirect_to @component_type, notice: 'Tipo de componente creado exitosamente.' }
         format.json { render json: @component_type, status: :created, location: @component_type }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class ComponentTypesController < ApplicationController
 
     respond_to do |format|
       if @component_type.update_attributes(params[:component_type])
-        format.html { redirect_to @component_type, notice: 'Tipo de componente actualizado con exito.' }
+        format.html { redirect_to @component_type, notice: 'Tipo de componente actualizado exitosamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

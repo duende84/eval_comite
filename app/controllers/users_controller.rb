@@ -46,7 +46,7 @@ class UsersController < ApplicationController
       @user.user_type = UserType.find_by_name("Visitante")
       if @user.save
         sign_in @user
-        format.html { redirect_to @user, notice: 'Usuario creado con exito.' }
+        format.html { redirect_to @user, notice: 'Usuario creado exitosamente.' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -64,7 +64,7 @@ class UsersController < ApplicationController
       @user.skip_password_validation = true
       if @user.custom_update_attributes(params[:user])
         sign_in @user
-        format.html { redirect_to @user, notice: 'Perfil actualizado con exito.' }
+        format.html { redirect_to @user, notice: 'Perfil actualizado exitsamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
