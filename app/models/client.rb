@@ -23,4 +23,5 @@ class Client < ActiveRecord::Base
   :mission, :name, :objectives, :phone, :responsible_id, :vision, :web, :responsible
 
   belongs_to :responsible, :class_name => "User", :foreign_key => "responsible_id"
+  has_many :client_users
 end

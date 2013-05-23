@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: client_users
+#
+#  id              :integer          not null, primary key
+#  user_id         :integer
+#  client_id       :integer
+#  entailment_date :date
+#  exit_date       :date
+#  user_state_id   :integer
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  client_id: 1
+  entailment_date: 2013-05-22
+  exit_date: 2013-05-22
+  user_state_id: 1
+
+two:
+  user_id: 1
+  client_id: 1
+  entailment_date: 2013-05-22
+  exit_date: 2013-05-22
+  user_state_id: 1
