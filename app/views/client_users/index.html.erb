@@ -1,0 +1,30 @@
+<div id="reg_form" class="bg_form">
+<h1>Relacion clientes usuarios</h1>
+<table>
+  <tr>
+    <th>Usuario</th>
+    <th>Cliente</th>
+    <th>Fecha de vinculacion</th>
+    <th>Fecha de salida</th>
+    <th>User state</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @client_users.each do |client_user| %>
+  <tr>
+    <td><%= client_user.user_id %></td>
+    <td><%= client_user.client_id %></td>
+    <td><%= client_user.entailment_date %></td>
+    <td><%= client_user.exit_date %></td>
+    <td><%= client_user.user_state_id %></td>
+    <td><%= link_to 'Mostrar', client_user %></td>
+    <td><%= link_to 'Editar', edit_client_user_path(client_user) %></td>
+    <td><%= link_to 'Eliminar', client_user, method: :delete, data: { confirm: '¿Esta seguro?' } %></td>
+  </tr>
+<% end %>
+</table>
+<hr>
+<%= link_to 'Nueva relacion', new_client_user_path, class: "btn btn-primary btn_form" %>
+</div>

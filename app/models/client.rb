@@ -35,4 +35,5 @@ class Client < ActiveRecord::Base
 
   mount_uploader :image, ImageClientUploader
 
+  has_many :client_users
 end

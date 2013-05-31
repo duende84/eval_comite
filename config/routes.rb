@@ -1,5 +1,8 @@
 EvalComite::Application.routes.draw do
 
+  resources :client_users
+
+
   resources :users do
     member do
       get 'password'

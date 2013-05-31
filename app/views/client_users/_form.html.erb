@@ -1,0 +1,38 @@
+<%= form_for(@client_user) do |f| %>
+  <% if @client_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@client_user.errors.count, "error") %> prohibited this client_user from being saved:</h2>
+
+      <ul>
+      <% @client_user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id, "Usuario",:class => "label_form" %><br />
+    <%= f.number_field :user_id, :class => "text_field_form" %>
+  </div>
+  <div class="field">
+    <%= f.label :client_id, "Cliente",:class => "label_form" %><br />
+    <%= f.number_field :client_id, :class => "text_field_form" %>
+  </div>
+  <div class="field">
+    <%= f.label :entailment_date, "Fecha de vinculacion",:class => "label_form" %><br />
+    <%= f.datepicker :entailment_date, :class => "text_field_form" %>
+  </div>
+  <div class="field">
+    <%= f.label :exit_date, "Fecha de salida",:class => "label_form" %><br />
+    <%= f.datepicker :exit_date, :class => "text_field_form" %>
+  </div>
+  <div class="field">
+    <%= f.label :user_state_id, "Estado",:class => "label_form" %><br />
+    <%= f.number_field :user_state_id, :class => "text_field_form" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Guardar", class: "btn btn-primary btn_form" %>
+  </div>
+  <hr>
+<% end %>

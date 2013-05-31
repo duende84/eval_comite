@@ -19,8 +19,9 @@ class User < ActiveRecord::Base
 
   attr_accessor :skip_password_validation
 
-  belongs_to :user_type
+  belongs_to :user_type, :foreign_key => "user_type_id"
   has_many :clients
+  has_many :client_users
 
   has_secure_password
 
