@@ -32,6 +32,22 @@
 			    </ul>
 		    </li>
 			<% end %>
+			<% if current_user.cliente? %>
+				<li><%= link_to "Clientes", clients_path, :class => 'home_link' %></li>
+			<% end %>
+			<% if current_user.auditor? || current_user.consultor? %>
+				<li><%= link_to "Clientes", clients_path, :class => 'home_link' %></li>
+				<li class="dropdown">
+			    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+			      <span>Evaluacion</span>
+			    </a>
+			    <ul class="dropdown-menu">
+			    	<li><%= link_to "Formularios", formularies_path %></li>
+		        <li><%= link_to "Tipo Componentes", component_types_path %></li>
+		        <li><%= link_to "Tipo Evaluacion", evaluation_types_path %></li>
+			    </ul>
+		    </li>
+			<% end %>
 		<% end %>
   	<li class="dropdown" id="accountmenu">
 	    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
