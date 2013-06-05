@@ -9,6 +9,7 @@ namespace :db do
     make_user_types
     make_user_states
     make_evaluation_types
+    make_users
   end
 end
 
@@ -45,4 +46,30 @@ def make_evaluation_types
   EvaluationType.create!(name: "Auditoria")
   EvaluationType.create!(name: "Consultoria")
   EvaluationType.create!(name: "Asistencia Tecnica")
+end
+
+def make_users
+
+  puts "----------------------"
+  puts "--------- Users  -----"
+  puts "----------------------"
+
+  User.create!(name: "Admin",
+    email:"admin@mail.com",
+    password:"admin123",
+    password_confirmation: "admin123",
+    user_type: UserType.find_by_name("Admin"))
+
+  User.create!(name: "Auditor",
+    email:"auditor@mail.com",
+    password:"auditor123",
+    password_confirmation: "auditor123",
+    user_type: UserType.find_by_name("Auditor"))
+
+  User.create!(name: "Cliente",
+    email:"cliente@mail.com",
+    password:"cliente123",
+    password_confirmation: "cliente123",
+    user_type: UserType.find_by_name("Cliente"))
+
 end

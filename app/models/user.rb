@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   before_save { email.downcase! }
   before_save :create_remember_token
 
-  validates :name, presence: true, length: { maximum: 50 }
+  validates :name, presence: true, length: { maximum: 50, minimum: 3 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence:   true,
                     format:     { with: VALID_EMAIL_REGEX },
@@ -41,6 +41,39 @@ class User < ActiveRecord::Base
       params.delete :password
       params.delete :password_confirmation
       update_attributes params
+    end
+  end
+
+  def admin?
+    if (self.user_type == UserType.find_by_name('Admin')) && (self.user_type!= nil)
+      return true
+    else
+      return false
+    end
+  end
+
+  def consultor?
+    if (self.user_type == UserType.find_by_name('Consultor')) && (self.user_type!= nil)
+      return true
+    else
+      return false
+    end
+  end
+
+  def auditor?
+    if (self.user_type == UserType.find_by_name('Auditor')) && (self.user_type!= nil)
+      return true
+    else
+      return false
+    end
+  end
+
+
+  def cliente?
+    if (self.user_type == UserType.find_by_name('Cliente')) && (self.user_type!= nil)
+      return true
+    else
+      return false
     end
   end
 

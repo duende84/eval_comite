@@ -19,9 +19,21 @@
 #
 
 class Client < ActiveRecord::Base
-  attr_accessible :address, :description, :email, :image,
+  attr_accessible :address, :description, :email, :image,:remote_image_url,
   :mission, :name, :objectives, :phone, :responsible_id, :vision, :web, :responsible
 
+  #validates :address, precense: true, length: {maximum: 100, minimum: 3}
+  #validates :description, precense: true, length: {maximum: 500, minimum: 3}
+
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence:   true,
+                    format:     { with: VALID_EMAIL_REGEX },
+                    uniqueness: { case_sensitive: false }
+  validates :name, presence: true, length: { maximum: 50 }
+
   belongs_to :responsible, :class_name => "User", :foreign_key => "responsible_id"
+
+  mount_uploader :image, ImageClientUploader
+
   has_many :client_users
 end

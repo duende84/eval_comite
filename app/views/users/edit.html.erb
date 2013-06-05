@@ -7,10 +7,10 @@
     		<%= render 'error_messages' %>
 
 				<%= f.label :nombre, :class => "label_form" %>
-		    <%= f.text_field :name, :class => "text_field_form"  %>
+		    <%= f.text_field :name, :class => "text_field_form", :required => true  %>
 
 		    <%= f.label :email, :class => "label_form" %>
-		    <%= f.text_field :email, :class => "text_field_form"  %>
+		    <%= f.text_field :email, :class => "text_field_form" , :required => true %>
 
 		    <%= f.label :telefono, :class => "label_form" %>
 		    <%= f.text_field :phone, :class => "text_field_form"  %>

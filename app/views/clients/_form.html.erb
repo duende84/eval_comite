@@ -13,23 +13,27 @@
 
   <div class="field">
     <%= f.label :name, "Nombre",:class => "label_form" %><br />
-    <%= f.text_field :name,:class => "text_field_form" %>
+    <%= f.text_field :name,:class => "text_field_form", :required => true %>
   </div>
   <div class="field">
     <%= f.label :address, "Direccion",:class => "label_form" %><br />
-    <%= f.text_field :address,:class => "text_field_form" %>
+    <%= f.text_field :address,:class => "text_field_form", :required => true %>
   </div>
   <div class="field">
     <%= f.label :email, "Email",:class => "label_form" %><br />
-    <%= f.text_field :email,:class => "text_field_form" %>
+    <%= f.text_field :email,:class => "text_field_form", :required => true %>
+  </div>
+  <div class="field">
+    <%= f.label :phone, "Telefono",:class => "label_form" %><br />
+    <%= f.text_field :phone,:class => "text_field_form", :required => true %>
   </div>
   <div class="field">
     <%= f.label :web, "Pagina web",:class => "label_form" %><br />
     <%= f.text_field :web,:class => "text_field_form" %>
   </div>
   <div class="field">
-    <%= f.label :phone, "Telefono",:class => "label_form" %><br />
-    <%= f.text_field :phone,:class => "text_field_form" %>
+    <%= f.label :description, "Descripcion",:class => "label_form" %><br />
+    <%= f.text_area :description,:class => "text_field_form", :required => true %>
   </div>
   <div class="field">
     <%= f.label :mission, "Mision",:class => "label_form" %><br />
@@ -40,16 +44,17 @@
     <%= f.text_area :vision,:class => "text_field_form" %>
   </div>
   <div class="field">
-    <%= f.label :description, "Descripcion",:class => "label_form" %><br />
-    <%= f.text_area :description,:class => "text_field_form" %>
-  </div>
-  <div class="field">
     <%= f.label :objectives, "Objetivos",:class => "label_form" %><br />
     <%= f.text_area :objectives,:class => "text_field_form" %>
   </div>
   <div class="field">
-    <%= f.label :image, "Imagen",:class => "label_form" %><br />
-    <%= f.text_field :image,:class => "text_field_form" %>
+        <%= f.label :image, 'Imagen', :class => "label_form" %><br />
+        <%= f.file_field :image, :class => "text_field_form" %>
+  </div>
+    <br />
+  <div class="field">
+        <%= f.label :remote_image_url, "o URL de imagen", :class => "label_form" %><br />
+        <%= f.text_field :remote_image_url, :class => "text_field_form" %>
   </div>
   <div class="field">
     <%= f.label :responsible_id, "Responsable",:class => "label_form" %><br />

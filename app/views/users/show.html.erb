@@ -21,6 +21,9 @@
       </p>
     <% end %>
     <hr>
+    <% if can? :update, User %>
     <%= link_to 'Editar Perfil', edit_user_path(@user) %>
+    <% end %>
+    <%= link_to 'Regresar', users_path %>
   </div>
 </div>
