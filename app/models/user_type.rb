@@ -12,4 +12,5 @@
 class UserType < ActiveRecord::Base
   attr_accessible :description, :name
   has_many :users
+  validates :name, presence: true, length: { maximum: 50, minimum:3 }
 end

@@ -11,13 +11,13 @@
         <%= f.text_field :name, :class => "text_field_form", :required => true%>
 
         <%= f.label :email, :class => "label_form" %>
-        <%= f.text_field :email, :class => "text_field_form" %>
+        <%= f.text_field :email, :class => "text_field_form", :required => true %>
 
         <%= f.label :password, :class => "label_form" %>
-        <%= f.password_field :password, :class => "text_field_form" %>
+        <%= f.password_field :password, :class => "text_field_form", :required => true %>
 
         <%= f.label :password_confirmation, "Confirmar password", :class => "label_form" %>
-        <%= f.password_field :password_confirmation, :class => "text_field_form" %>
+        <%= f.password_field :password_confirmation, :class => "text_field_form", :required => true %>
 
         <%= f.submit "Crear mi cuenta", class: "btn btn-primary btn_form" %>
       <% end %>

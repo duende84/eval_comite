@@ -10,4 +10,5 @@
 
 class EvaluationType < ActiveRecord::Base
   attr_accessible :name
+  validates :name, presence: true, length: { maximum: 200 , minimum:3 }
 end

@@ -14,6 +14,10 @@ gem "carrierwave", "~> 0.8.0"
 # Simple authorization for users roles
 gem "cancan", "~> 1.6.10"
 
+# rackspace storage
+gem "fog", "~> 1.11.1"
+
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
