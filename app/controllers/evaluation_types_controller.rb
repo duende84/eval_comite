@@ -1,4 +1,5 @@
 class EvaluationTypesController < ApplicationController
+  load_and_authorize_resource
   # GET /evaluation_types
   # GET /evaluation_types.json
   def index

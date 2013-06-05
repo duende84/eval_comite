@@ -1,4 +1,5 @@
 class FormulariesController < ApplicationController
+  load_and_authorize_resource
   # GET /formularies
   # GET /formularies.json
   def index

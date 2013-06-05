@@ -1,4 +1,5 @@
 class UserStatesController < ApplicationController
+  load_and_authorize_resource
   # GET /user_states
   # GET /user_states.json
   def index

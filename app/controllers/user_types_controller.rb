@@ -1,4 +1,5 @@
 class UserTypesController < ApplicationController
+  load_and_authorize_resource
   # GET /user_types
   # GET /user_types.json
   def index
