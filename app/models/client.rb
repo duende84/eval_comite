@@ -29,7 +29,7 @@ class Client < ActiveRecord::Base
   validates :email, presence:   true,
                     format:     { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
-  validates :name, presence: true, length: { maximum: 50 }
+  validates :name, presence: true, length: { maximum: 50,minimum: 3 }
 
   belongs_to :responsible, :class_name => "User", :foreign_key => "responsible_id"
 

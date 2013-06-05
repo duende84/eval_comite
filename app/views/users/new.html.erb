@@ -7,11 +7,14 @@
       <%= form_for(@user) do |f| %>
         <%= render 'error_messages' %>
 
-        <%= f.label :nombre, :class => "label_form" %>
+        <%= f.label :name, "Nombre", :class => "label_form" %>
         <%= f.text_field :name, :class => "text_field_form", :required => true%>
 
         <%= f.label :email, :class => "label_form" %>
         <%= f.text_field :email, :class => "text_field_form", :required => true %>
+
+        <%= f.label :image, 'Imagen', :class => "label_form" %><br />
+        <%= f.file_field :image, :class => "text_field_form" %>
 
         <%= f.label :password, :class => "label_form" %>
         <%= f.password_field :password, :class => "text_field_form", :required => true %>

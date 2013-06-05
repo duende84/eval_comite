@@ -15,7 +15,7 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :phone, :user_type_id, :user_type, :password_confirmation
+  attr_accessible :email, :name, :image, :image_url, :password, :phone, :user_type_id, :user_type, :password_confirmation
 
   attr_accessor :skip_password_validation
 
@@ -24,6 +24,8 @@ class User < ActiveRecord::Base
   has_many :client_users
 
   has_secure_password
+
+  mount_uploader :image, UserImageUploader
 
   before_save { email.downcase! }
   before_save :create_remember_token
@@ -35,6 +37,8 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
   validates :password, :presence => true, length: { minimum: 6 }, :unless => :skip_password_validation
   validates :password_confirmation, presence: true, :unless => :skip_password_validation
+
+
 
   def custom_update_attributes(params)
     if params[:password].blank?
