@@ -1,5 +1,8 @@
 EvalComite::Application.routes.draw do
 
+  resources :evaluations
+
+
   resources :client_users
 
 

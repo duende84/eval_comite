@@ -1,0 +1,28 @@
+<div id="reg_form" class="bg_form">
+  <h1>Evaluacion</h1>
+
+	<p>
+	  <b>Fecha:</b>
+	  <%= @evaluation.date %>
+	</p>
+
+	<p>
+	  <b>Creada por:</b>
+	  <%= @evaluation.owner_id %>
+	</p>
+
+	<p>
+	  <b>Tipo de Evaluacion:</b>
+	  <%= @evaluation.evaluation_type_id %>
+	</p>
+
+	<p>
+	  <b>Observaciones:</b>
+	  <%= @evaluation.notes %>
+	</p>
+	<hr>
+  <% if can? :update, @evaluation %>
+    <%= link_to 'Editar', edit_evaluation_path(@evaluation) %> |
+  <% end %>
+  <%= link_to 'Regresar', evaluations_path %>
+</div>

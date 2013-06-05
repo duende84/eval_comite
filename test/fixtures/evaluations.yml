@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: evaluations
+#
+#  id                 :integer          not null, primary key
+#  date               :date
+#  owner_id           :integer
+#  evaluation_type_id :integer
+#  notes              :text
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: 2013-06-05
+  owner_id: 1
+  evaluation_type_id: 1
+  notes: MyText
+
+two:
+  date: 2013-06-05
+  owner_id: 1
+  evaluation_type_id: 1
+  notes: MyText

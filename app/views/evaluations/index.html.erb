@@ -1,0 +1,23 @@
+<div id="reg_form" class="bg_form">
+  <h1>Listado de evaluaciones</h1>
+
+  <% @evaluations.each do |evaluation| %>
+    <p><b>Fecha:</b> <%= evaluation.date %></p>
+    <p><b>Creada por:</b> <%= evaluation.owner_id %></p>
+    <p><b>Tipo de evaluacion:</b> <%= evaluation.evaluation_type_id %></p>
+    <p><b>Observaciones:</b>: <%= evaluation.notes %></p>
+    <p>
+      <%= link_to 'Mostrar', evaluation %>
+      <% if can? :update, evaluation %>
+        - <%= link_to 'Editar', edit_evaluation_path(evaluation) %>
+      <% end %>
+      <% if can? :destroy, evaluation %>
+        - <%= link_to 'Eliminar', evaluation, method: :delete, data: { confirm: '¿Esta seguro?' } %>
+      <% end %>
+    </p>
+  <% end %>
+  <hr>
+  <% if can? :create, Evaluation %>
+    <%= link_to 'Nueva evaluacion', new_evaluation_path, class: "btn btn-primary btn_form" %>
+  <% end %>
+</div>

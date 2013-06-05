@@ -12,6 +12,7 @@
 #  updated_at      :datetime         not null
 #  password_digest :string(255)
 #  remember_token  :string(255)
+#  image           :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -22,6 +23,7 @@ class User < ActiveRecord::Base
   belongs_to :user_type, :foreign_key => "user_type_id"
   has_many :clients
   has_many :client_users
+  has_many :evaluations
 
   has_secure_password
 

@@ -7,12 +7,11 @@ class Ability
     user ||= User.new # guest user (not logged in)
    if user.admin?
        can :manage, :all
-   elsif user.consultor?
+   elsif user.consultor? || user.auditor?
        can :read, :all
        can [:update, :destroy , :password, :update_password], User, :id => user.id
-    elsif user.auditor?
-       can :read, :all
-       can [:update, :destroy , :password, :update_password], User, :id => user.id
+       can :create, Evaluation
+       can [:update, :destroy], Evaluation, :owner_id => user.id
    elsif user.cliente?
        can :read, :all
        can [:update, :destroy , :password, :update_password], User, :id => user.id
