@@ -32,11 +32,17 @@
     <td><%= client.image %></td>
     <td><%= client.responsible_id %></td>
     <td><%= link_to 'Mostrar', client %></td>
+    <% if can? :update, User %>
     <td><%= link_to 'Editar', edit_client_path(client) %></td>
+    <% end %>
+    <% if can? :destroy, User %>
     <td><%= link_to 'Eliminar', client, method: :delete, data: { confirm: '¿Esta seguro?' } %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 <hr>
+<% if can? :create, User %>
 <%= link_to 'Nuevo Cliente', new_client_path, class: "btn btn-primary btn_form" %>
+<% end %>
 </div>

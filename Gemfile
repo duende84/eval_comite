@@ -12,7 +12,7 @@ gem "rmagick", "~> 2.13.2"
 gem "carrierwave", "~> 0.8.0"
 
 # Simple authorization for users roles
-gem "cancan", "~> 1.6.9"
+gem "cancan", "~> 1.6.10"
 
 # Gems used only for assets and not required
 # in production environments by default.

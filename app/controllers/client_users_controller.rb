@@ -1,4 +1,5 @@
 class ClientUsersController < ApplicationController
+  load_and_authorize_resource
   # GET /client_users
   # GET /client_users.json
   def index

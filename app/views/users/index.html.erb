@@ -10,10 +10,22 @@
         <% if (!user.user_type.nil?) %>
           <p><%= user.user_type.name %></p>
         <% end %>
-        <p><%= link_to 'Mostrar', user %> - <%= link_to 'Editar', edit_user_path(user) %> - <%= link_to 'Eliminar', user, method: :delete, data: { confirm: '¿Estas seguro?' } %></p>
+        <p><%= link_to 'Mostrar', user %>
+          <% if can? :update, User %>
+          - <%= link_to 'Editar', edit_user_path(user) %>
+          <% end %>
+          <% if can? :destroy, User %>
+          - <%= link_to 'Eliminar', user, method: :delete, data: { confirm: '¿Estas seguro?' } %></p>
+          <% end %>
     </div>
   <% end %>
 
   <hr>
-  <%= link_to 'Nuevo usuario', new_user_path, class: "btn btn-primary btn_form" %>
+
+
+  <% if can? :create, User %>
+    <%= link_to 'Nuevo usuario', new_user_path, class: "btn btn-primary btn_form" %>
+  <% end %>
+
+
 </div>

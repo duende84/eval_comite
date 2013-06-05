@@ -55,6 +55,8 @@
     <%= @client.responsible_id %>
   </p>
   <hr>
+  <% if can? :update, User %>
   <%= link_to 'Editar', edit_client_path(@client) %> |
+  <% end %>
   <%= link_to 'Regresar', clients_path %>
 </div>

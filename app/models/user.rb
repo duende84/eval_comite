@@ -44,6 +44,39 @@ class User < ActiveRecord::Base
     end
   end
 
+  def admin?
+    if (self.user_type == UserType.find_by_name('Admin')) && (self.user_type!= nil)
+      return true
+    else
+      return false
+    end
+  end
+
+  def consultor?
+    if (self.user_type == UserType.find_by_name('Consultor')) && (self.user_type!= nil)
+      return true
+    else
+      return false
+    end
+  end
+
+  def auditor?
+    if (self.user_type == UserType.find_by_name('Auditor')) && (self.user_type!= nil)
+      return true
+    else
+      return false
+    end
+  end
+
+
+  def cliente?
+    if (self.user_type == UserType.find_by_name('Cliente')) && (self.user_type!= nil)
+      return true
+    else
+      return false
+    end
+  end
+
   private
 
   def create_remember_token
