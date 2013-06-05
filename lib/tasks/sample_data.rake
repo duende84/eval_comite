@@ -58,18 +58,28 @@ def make_users
     email:"admin@mail.com",
     password:"admin123",
     password_confirmation: "admin123",
-    user_type: UserType.find_by_name("Admin"))
+    user_type: UserType.find_by_name("Admin"),
+    remote_image_url: "http://eval-comite.herokuapp.com/assets/user2.png")
 
   User.create!(name: "Auditor",
     email:"auditor@mail.com",
     password:"auditor123",
     password_confirmation: "auditor123",
-    user_type: UserType.find_by_name("Auditor"))
+    user_type: UserType.find_by_name("Auditor"),
+    remote_image_url: "http://eval-comite.herokuapp.com/assets/user2.png")
+
+  User.create!(name: "Consultor",
+    email:"consultor@mail.com",
+    password:"consultor123",
+    password_confirmation: "consultor123",
+    user_type: UserType.find_by_name("Consultor"),
+    remote_image_url: "http://eval-comite.herokuapp.com/assets/user2.png")
 
   User.create!(name: "Cliente",
     email:"cliente@mail.com",
     password:"cliente123",
     password_confirmation: "cliente123",
-    user_type: UserType.find_by_name("Cliente"))
+    user_type: UserType.find_by_name("Cliente"),
+    remote_image_url: "http://eval-comite.herokuapp.com/assets/user2.png")
 
 end
