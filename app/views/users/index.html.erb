@@ -4,6 +4,9 @@
   <% @users.each do |user| %>
     <hr>
     <div class="user">
+     <% if !user.image_url(:thumb).to_s.blank? %>
+        <p><%= image_tag user.image_url(:thumb).to_s %></p>
+     <% end %>
         <p><%= user.name %></p>
         <p><%= user.email %></p>
         <p><%= user.phone %></p>

@@ -2,6 +2,9 @@
 <div class="row">
   <div id="reg_form" class="bg_form">
     <h1>Perfil de usuario</h1>
+     <% if !@user.image_url(:show).to_s.blank? %>
+       <p><%= image_tag @user.image_url(:show).to_s %></p>
+     <% end %>
     <p>
       <b>Nombre:</b>
       <%= @user.name %>
