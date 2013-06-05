@@ -16,6 +16,7 @@ class Ability
    elsif user.cliente?
        can :read, :all
        can [:update, :destroy , :password, :update_password], User, :id => user.id
+       can [:update, :destroy], Client, :responsible_id => user.id
    else
        can :read, :all
        can :create, User

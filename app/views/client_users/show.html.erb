@@ -21,8 +21,8 @@
     <%= @client_user.user_state_id %>
   </p>
   <hr>
-  <% if can? :update, User %>
-  <%= link_to 'Editar', edit_client_user_path(@client_user) %> |
+  <% if can? :update, @client_user %>
+    <%= link_to 'Editar', edit_client_user_path(@client_user) %> |
   <% end %>
   <%= link_to 'Regresar', client_users_path %>
 </div>
