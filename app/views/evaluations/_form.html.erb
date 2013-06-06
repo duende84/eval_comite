@@ -11,24 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :date, "Fecha",:class => "label_form" %><br />
-    <%= f.datepicker :date, :class => "text_field_form" %>
-  </div>
-  <div class="field">
-    <%= f.label :owner_id, "Creada por",:class => "label_form"  %><br />
-    <%= f.number_field :owner_id,:class => "text_field_form"%>
-  </div>
-  <div class="field">
-    <%= f.label :evaluation_type_id,"Tipo de evaluacion",:class => "label_form" %><br />
-    <%= f.number_field :evaluation_type_id,:class => "text_field_form" %>
-  </div>
-  <div class="field">
-    <%= f.label :notes,"Observaciones",:class => "label_form" %><br />
-    <%= f.text_area :notes, :class => "text_field_form", :size => "50x10"  %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Guardar", class: "btn btn-primary btn_form" %>
-  </div>
+  <%= f.label :date, "Fecha",:class => "label_form" %>
+  <%= f.datepicker :date, :class => "text_field_form" %>
+
+  <%= f.label :owner_id, "Creada por",:class => "label_form"  %>
+  <%= f.collection_select :owner_id, User.all, :id, :name, { :prompt => 'Seleccione un usuario' }, :class => "select_form" %>
+
+  <%= f.label :evaluation_type_id,"Tipo de evaluacion",:class => "label_form" %>
+  <%= f.collection_select :evaluation_type_id, EvaluationType.all, :id, :name, { :prompt => 'Seleccione un tipo de evaluacion' }, :class => "select_form"%>
+
+  <%= f.label :notes,"Observaciones",:class => "label_form" %>
+  <%= f.text_area :notes, :class => "text_field_form", :size => "50x10"  %>
+
+  <%= f.submit "Guardar", class: "btn btn-primary btn_form" %>
+
   <hr>
 <% end %>

@@ -11,6 +11,12 @@
   </p>
 
   <p>
+    <b>Responsable:</b>
+    <%= @client.responsible.name %> -
+    <%= @client.responsible.email %>
+  </p>
+
+  <p>
     <b>Direccion:</b>
     <%= @client.address %>
   </p>
@@ -50,10 +56,6 @@
     <%= @client.objectives %>
   </p>
 
-  <p>
-    <b>Responsable:</b>
-    <%= @client.responsible_id %>
-  </p>
   <hr>
   <% if can? :update, @client %>
     <%= link_to 'Editar', edit_client_path(@client) %> |

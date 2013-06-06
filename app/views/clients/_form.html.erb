@@ -11,57 +11,42 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name, "Nombre",:class => "label_form" %><br />
-    <%= f.text_field :name,:class => "text_field_form", :required => true %>
-  </div>
-  <div class="field">
-    <%= f.label :address, "Direccion",:class => "label_form" %><br />
-    <%= f.text_field :address,:class => "text_field_form", :required => true %>
-  </div>
-  <div class="field">
-    <%= f.label :email, "Email",:class => "label_form" %><br />
-    <%= f.text_field :email,:class => "text_field_form", :required => true %>
-  </div>
-  <div class="field">
-    <%= f.label :phone, "Telefono",:class => "label_form" %><br />
-    <%= f.text_field :phone,:class => "text_field_form", :required => true %>
-  </div>
-    <div class="field">
-        <%= f.label :image, 'Imagen', :class => "label_form" %><br />
-        <%= f.file_field :image, :class => "text_field_form" %>
-  </div>
-    <br />
-  <div class="field">
-        <%= f.label :remote_image_url, "o URL de imagen", :class => "label_form" %><br />
-        <%= f.text_field :remote_image_url, :class => "text_field_form" %>
-  </div>
-  <div class="field">
-    <%= f.label :web, "Pagina web",:class => "label_form" %><br />
-    <%= f.text_field :web,:class => "text_field_form" %>
-  </div>
-  <div class="field">
-    <%= f.label :description, "Descripcion",:class => "label_form" %><br />
-    <%= f.text_area :description,:class => "text_field_form", :required => true %>
-  </div>
-  <div class="field">
-    <%= f.label :mission, "Mision",:class => "label_form" %><br />
-    <%= f.text_area :mission,:class => "text_field_form" %>
-  </div>
-  <div class="field">
-    <%= f.label :vision, "Vision",:class => "label_form" %><br />
-    <%= f.text_area :vision,:class => "text_field_form" %>
-  </div>
-  <div class="field">
-    <%= f.label :objectives, "Objetivos",:class => "label_form" %><br />
-    <%= f.text_area :objectives,:class => "text_field_form" %>
-  </div>
-  <div class="field">
-    <%= f.label :responsible_id, "Responsable",:class => "label_form" %><br />
-    <%= f.number_field :responsible_id,:class => "text_field_form" %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Guardar", class: "btn btn-primary btn_form" %>
-  </div>
+  <%= f.label :name, "Nombre",:class => "label_form" %>
+  <%= f.text_field :name,:class => "text_field_form", :required => true %>
+
+  <%= f.label :responsible_id, "Responsable",:class => "label_form" %>
+  <%= f.collection_select :responsible_id, User.all, :id, :name, { :prompt => 'Seleccione un usuario' }, :class => "select_form" %>
+
+  <%= f.label :address, "Direccion",:class => "label_form" %>
+  <%= f.text_field :address,:class => "text_field_form", :required => true %>
+
+  <%= f.label :email, "Email",:class => "label_form" %>
+  <%= f.text_field :email,:class => "text_field_form", :required => true %>
+
+  <%= f.label :phone, "Telefono",:class => "label_form" %>
+  <%= f.text_field :phone,:class => "text_field_form", :required => true %>
+
+  <%= f.label :image, 'Imagen', :class => "label_form" %>
+  <%= f.file_field :image, :class => "text_field_form" %>
+
+  <%= f.label :remote_image_url, "o URL de imagen", :class => "label_form" %>
+  <%= f.text_field :remote_image_url, :class => "text_field_form" %>
+
+  <%= f.label :web, "Pagina web",:class => "label_form" %>
+  <%= f.text_field :web,:class => "text_field_form" %>
+
+  <%= f.label :description, "Descripcion",:class => "label_form" %>
+  <%= f.text_area :description,:class => "text_field_form", :required => true %>
+
+  <%= f.label :mission, "Mision",:class => "label_form" %>
+  <%= f.text_area :mission,:class => "text_field_form" %>
+
+  <%= f.label :vision, "Vision",:class => "label_form" %>
+  <%= f.text_area :vision,:class => "text_field_form" %>
+
+  <%= f.label :objectives, "Objetivos",:class => "label_form" %>
+  <%= f.text_area :objectives,:class => "text_field_form" %>
+
+  <%= f.submit "Guardar", class: "btn btn-primary btn_form" %>
   <hr>
 <% end %>

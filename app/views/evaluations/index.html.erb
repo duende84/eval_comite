@@ -3,8 +3,12 @@
 
   <% @evaluations.each do |evaluation| %>
     <p><b>Fecha:</b> <%= evaluation.date %></p>
-    <p><b>Creada por:</b> <%= evaluation.owner_id %></p>
-    <p><b>Tipo de evaluacion:</b> <%= evaluation.evaluation_type_id %></p>
+    <p>
+      <b>Creada por:</b>
+      <%= evaluation.owner.name %> -
+      <%= evaluation.owner.email %>
+    </p>
+    <p><b>Tipo de evaluacion:</b> <%= evaluation.evaluation_type.name %></p>
     <p><b>Observaciones:</b>: <%= evaluation.notes %></p>
     <p>
       <%= link_to 'Mostrar', evaluation %>

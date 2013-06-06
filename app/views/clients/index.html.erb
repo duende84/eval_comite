@@ -10,14 +10,13 @@
       <p><%= client.name %></p>
       <p><%= client.address %></p>
       <p><%= client.email %></p>
-      <p><%= client.image %></p>
       <p><%= client.web %></p>
       <p><%= client.phone %></p>
       <p><%= client.mission %></p>
       <p><%= client.vision %></p>
       <p><%= client.description %></p>
       <p><%= client.objectives %></p>
-      <p><%= client.responsible_id %></p>
+      <p><%= client.responsible.name %> - <%= client.responsible.email %></p>
       <p>
         <%= link_to 'Mostrar', client %>
         <% if can? :update, client %>

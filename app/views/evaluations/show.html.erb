@@ -8,12 +8,13 @@
 
 	<p>
 	  <b>Creada por:</b>
-	  <%= @evaluation.owner_id %>
+	  <%= @evaluation.owner.name %> -
+	  <%= @evaluation.owner.email %>
 	</p>
 
 	<p>
 	  <b>Tipo de Evaluacion:</b>
-	  <%= @evaluation.evaluation_type_id %>
+	  <%= @evaluation.evaluation_type.name %>
 	</p>
 
 	<p>
