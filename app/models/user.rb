@@ -16,7 +16,7 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :image, :image_url, :password, :phone, :user_type_id, :user_type, :password_confirmation
+  attr_accessible :email, :name, :image, :remote_image_url, :password, :phone, :user_type_id, :user_type, :password_confirmation
 
   attr_accessor :skip_password_validation
 
