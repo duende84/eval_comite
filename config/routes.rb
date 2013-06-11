@@ -1,5 +1,7 @@
 EvalComite::Application.routes.draw do
 
+  get "contact/new"
+
   resources :evaluations
 
 
@@ -25,6 +27,9 @@ EvalComite::Application.routes.draw do
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
+
+  match 'contact' => 'contact#new', :as => 'contact', :via => :get
+  match 'contact' => 'contact#create', :as => 'contact', :via => :post
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

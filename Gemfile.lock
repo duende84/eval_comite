@@ -78,7 +78,7 @@ GEM
     net-scp (1.1.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.6.7)
-    nokogiri (1.5.9)
+    nokogiri (1.5.10)
     pg (0.15.1)
     polyglot (0.3.3)
     rack (1.4.5)
