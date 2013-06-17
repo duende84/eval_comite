@@ -2,6 +2,7 @@
   <h1>Listado de evaluaciones</h1>
 
   <% @evaluations.each do |evaluation| %>
+    <p><b>Nombre:</b> <%= evaluation.name %></p>
     <p><b>Fecha:</b> <%= evaluation.date %></p>
     <p>
       <b>Creada por:</b>
@@ -9,7 +10,7 @@
       <%= evaluation.owner.email %>
     </p>
     <p><b>Tipo de evaluacion:</b> <%= evaluation.evaluation_type.name %></p>
-    <p><b>Observaciones:</b>: <%= evaluation.notes %></p>
+    <p><b>Observaciones:</b> <%= evaluation.notes %></p>
     <p>
       <%= link_to 'Mostrar', evaluation %>
       <% if can? :update, evaluation %>

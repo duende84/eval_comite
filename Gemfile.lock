@@ -47,7 +47,7 @@ GEM
       execjs
     coffee-script-source (1.6.2)
     erubis (2.7.0)
-    excon (0.22.1)
+    excon (0.24.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
     fog (1.11.1)
@@ -74,7 +74,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.23)
-    multi_json (1.7.6)
+    multi_json (1.7.7)
     net-scp (1.1.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.6.7)

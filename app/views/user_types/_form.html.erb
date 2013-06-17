@@ -11,16 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name, "Nombre", :class => "label_form" %><br />
-    <%= f.text_field :name, :class => "text_field_form", :required => true %>
-  </div>s
-  <div class="field">
-    <%= f.label :description, "Descripcion", :class => "label_form" %><br />
-    <%= f.text_field :description, :class => "text_field_form" %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Guardar", class: "btn btn-primary btn_form" %>
-  </div>
+  <%= f.label :name, "Nombre", :class => "label_form" %>
+  <%= f.text_field :name, :class => "text_field_form", :required => true %>
+
+  <%= f.label :description, "Descripcion", :class => "label_form" %>
+  <%= f.text_field :description, :class => "text_field_form" %>
+
+  <%= f.submit "Guardar", class: "btn btn-primary btn_form" %>
   <hr>
 <% end %>

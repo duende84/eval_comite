@@ -10,13 +10,9 @@
       </ul>
     </div>
   <% end %>
+  <%= f.label :name,"Nombre",:class => "label_form"%>
+  <%= f.text_field :name,:class => "text_field_form", :required => true %>
 
-  <div class="field">
-    <%= f.label :name,"Nombre",:class => "label_form"%><br />
-    <%= f.text_field :name,:class => "text_field_form", :required => true %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Guardar", class: "btn btn-primary btn_form" %>
-  </div>
+  <%= f.submit "Guardar", class: "btn btn-primary btn_form" %>
   <hr>
 <% end %>
