@@ -1,22 +1,18 @@
 EvalComite::Application.routes.draw do
 
-  get "contact/new"
-
-  resources :evaluations
-
-
-  resources :client_users
-
-
   resources :users do
     member do
       get 'password'
       put 'update_password'
+      get 'user_type'
+      put 'update_user_type'
     end
   end
 
   resources :sessions, only: [:new, :create, :destroy]
 
+  resources :evaluations
+  resources :client_users
   resources :evaluation_types
   resources :user_states
   resources :user_types
